@@ -1,0 +1,767 @@
+{
+    "metadata": {
+        "version": "2.1.0",
+        "last_updated": "2026-01-09",
+        "region_focus": [
+            "YE",
+            "SA"
+        ],
+        "description": "Merged configuration: Rich Vocabulary + Hierarchical Intelligence"
+    },
+    "settings": {
+        "fuzzy_threshold": 0.8,
+        "default_currency": "YER",
+        "default_country": "YE",
+        "language": "ar",
+        "number_parser": {
+            "enable_spoken_numbers": true,
+            "thousands_words": [
+                "الف",
+                "ألف",
+                "الاف",
+                "آلاف"
+            ],
+            "millions_words": [
+                "مليون",
+                "ملايين"
+            ],
+            "billions_words": [
+                "مليار",
+                "مليارات"
+            ],
+            "fractions": {
+                "نص": 0.5,
+                "ربع": 0.25
+            }
+        }
+    },
+    "nlp_engine": {
+        "stop_words": [
+            "يا",
+            "لو",
+            "سمحت",
+            "بالله",
+            "عليك",
+            "ممكن",
+            "أبغا",
+            "أشتي",
+            "بدي",
+            "سويت",
+            "قمت",
+            "بـ"
+        ],
+        "corrections_map": {
+            "currency_typos": {
+                "رال": "ريال",
+                "رايل": "ريال",
+                "لاال": "ريال",
+                "ريال سعودي": "SAR",
+                "سعودي": "SAR",
+                "سعوديه": "SAR",
+                "دولار": "USD",
+                "امريكي": "USD",
+                "يورو": "EUR",
+                "درهم": "AED",
+                "ريال يمني": "YER",
+                "ريالنا": "YER"
+            },
+            "entity_typos": {
+                "العمي": "العميل",
+                "العيميل": "العميل",
+                "ظيف": "ضيف",
+                "اس تي سي": "STC",
+                "استي سي": "STC",
+                "البيكك": "البيك",
+                "الكريمي بنك": "bank_kuraimi",
+                "ام فلوس": "wallet_kurimi_mfloos"
+            },
+            "action_typos": {
+                "حسابي": "حساب",
+                "تحويللي": "تحويل",
+                "حوّل": "تحويل",
+                "ارسل": "تحويل",
+                "وصلتني": "دخل",
+                "راتبي": "راتب",
+                "سلفة": "قرض",
+                "دين": "قرض",
+                "استلاف": "قرض",
+                "دفع": "مصروف",
+                "سدد": "مصروف",
+                "كاش": "نقدي"
+            },
+            "general_synonyms": {
+                "فلوس": "نقود",
+                "قروش": "نقود",
+                "زلط": "نقود",
+                "بيس": "نقود",
+                "نت": "انترنت",
+                "شبكه": "انترنت",
+                "الداتا": "بيانات",
+                "كهرب": "كهرباء",
+                "فاتوره": "فاتورة",
+                "بنزين": "وقود"
+            }
+        }
+    },
+    "currencies": [
+        {
+            "code": "YER",
+            "name_ar": "ريال يمني",
+            "symbol": "﷼",
+            "subunit": "فلس",
+            "priority": 10,
+            "keywords": [
+                "ريال يمني",
+                "يمني",
+                "يمنية",
+                "محلي",
+                "ريالنا"
+            ]
+        },
+        {
+            "code": "SAR",
+            "name_ar": "ريال سعودي",
+            "symbol": "ر.س",
+            "subunit": "هللة",
+            "priority": 10,
+            "keywords": [
+                "ريال سعودي",
+                "سعودي",
+                "سعودية",
+                "ريال"
+            ]
+        },
+        {
+            "code": "USD",
+            "name_ar": "دولار أمريكي",
+            "symbol": "$",
+            "subunit": "سنت",
+            "priority": 9,
+            "keywords": [
+                "دولار",
+                "دولار امريكي",
+                "امريكي",
+                "أمريكي",
+                "دولارات"
+            ]
+        },
+        {
+            "code": "AED",
+            "name_ar": "درهم إماراتي",
+            "symbol": "د.إ",
+            "subunit": "فلس",
+            "priority": 7,
+            "keywords": [
+                "درهم",
+                "درهم اماراتي",
+                "اماراتي"
+            ]
+        },
+        {
+            "code": "EUR",
+            "name_ar": "يورو",
+            "symbol": "€",
+            "subunit": "سنت",
+            "priority": 6,
+            "keywords": [
+                "يورو",
+                "الاتحاد الاوروبي"
+            ]
+        },
+        {
+            "code": "EGP",
+            "name_ar": "جنيه مصري",
+            "symbol": "£",
+            "priority": 4,
+            "keywords": [
+                "جنيه",
+                "مصري"
+            ]
+        },
+        {
+            "code": "GBP",
+            "name_ar": "جنيه إسترليني",
+            "symbol": "£",
+            "priority": 3,
+            "keywords": [
+                "باوند",
+                "جنيه استرليني"
+            ]
+        }
+    ],
+    "categories_taxonomy": [
+        {
+            "id": "cat_food",
+            "name_ar": "طعام وشراب",
+            "type": "expense",
+            "icon": "restaurant",
+            "color": "#FF5722",
+            "keywords": [
+                "أكل",
+                "مطعم",
+                "غداء",
+                "عشاء",
+                "طعام"
+            ],
+            "subcategories": [
+                {
+                    "id": "sub_groceries",
+                    "name_ar": "سوبرماركت وبقالة",
+                    "keywords": [
+                        "سوبرماركت",
+                        "بقالة",
+                        "مشتريات بيت",
+                        "تموينات",
+                        "مقاضي",
+                        "بنده",
+                        "كارفور"
+                    ]
+                },
+                {
+                    "id": "sub_restaurants",
+                    "name_ar": "مطاعم ووجبات",
+                    "keywords": [
+                        "مطعم",
+                        "فاست فود",
+                        "طلبات",
+                        "سناك",
+                        "البيك",
+                        "شاورما"
+                    ]
+                },
+                {
+                    "id": "sub_cafe",
+                    "name_ar": "مقهى",
+                    "keywords": [
+                        "قهوة",
+                        "كوفي",
+                        "شاي"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "cat_housing",
+            "name_ar": "سكن وخدمات",
+            "type": "expense",
+            "icon": "home",
+            "color": "#673AB7",
+            "keywords": [
+                "بيت",
+                "سكن",
+                "منزل"
+            ],
+            "subcategories": [
+                {
+                    "id": "sub_rent",
+                    "name_ar": "إيجار",
+                    "keywords": [
+                        "ايجار",
+                        "إيجار",
+                        "جارتي",
+                        "مؤجر"
+                    ]
+                },
+                {
+                    "id": "sub_utilities",
+                    "name_ar": "فواتير خدمات",
+                    "keywords": [
+                        "فاتورة",
+                        "فواتير",
+                        "كهرباء",
+                        "ماء",
+                        "مياه",
+                        "كهرب",
+                        "نت",
+                        "انترنت"
+                    ]
+                },
+                {
+                    "id": "sub_maintenance_home",
+                    "name_ar": "صيانة منزلية",
+                    "keywords": [
+                        "سباكة",
+                        "كهرباء بيت",
+                        "لمبات",
+                        "اصلاح"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "cat_transport",
+            "name_ar": "نقل ومواصلات",
+            "type": "expense",
+            "icon": "directions_car",
+            "color": "#2196F3",
+            "keywords": [
+                "سيارة",
+                "طريق",
+                "خط"
+            ],
+            "subcategories": [
+                {
+                    "id": "sub_fuel",
+                    "name_ar": "وقود",
+                    "keywords": [
+                        "بنزين",
+                        "ديزل",
+                        "وقود",
+                        "محطة",
+                        "تفلية"
+                    ]
+                },
+                {
+                    "id": "sub_public_transport",
+                    "name_ar": "مواصلات عامة",
+                    "keywords": [
+                        "باص",
+                        "تاكسي",
+                        "أجرة",
+                        "مشوار",
+                        "اوبر",
+                        "كريم"
+                    ]
+                },
+                {
+                    "id": "sub_car_maintenance",
+                    "name_ar": "صيانة سيارة",
+                    "keywords": [
+                        "صيانة",
+                        "تبديل زيت",
+                        "قطع غيار",
+                        "ميكانيك",
+                        "بنشر"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "cat_telecom",
+            "name_ar": "اتصالات",
+            "type": "expense",
+            "icon": "phone_iphone",
+            "color": "#00BCD4",
+            "keywords": [
+                "جوال",
+                "موبايل"
+            ],
+            "subcategories": [
+                {
+                    "id": "sub_recharge",
+                    "name_ar": "شحن رصيد",
+                    "keywords": [
+                        "رصيد",
+                        "شحن",
+                        "بطاقة سوا",
+                        "كارت"
+                    ]
+                },
+                {
+                    "id": "sub_internet_packages",
+                    "name_ar": "باقات انترنت",
+                    "keywords": [
+                        "باقة",
+                        "داتا",
+                        "اشتراك نت",
+                        "شريحة بيانات"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "cat_health",
+            "name_ar": "الصحة والعلاج",
+            "type": "expense",
+            "icon": "local_hospital",
+            "color": "#E91E63",
+            "subcategories": [
+                {
+                    "id": "sub_pharmacy",
+                    "name_ar": "أدوية",
+                    "keywords": [
+                        "صيدلية",
+                        "دواء",
+                        "علاج"
+                    ]
+                },
+                {
+                    "id": "sub_doctor",
+                    "name_ar": "كشف وطبيب",
+                    "keywords": [
+                        "مستشفى",
+                        "دكتور",
+                        "طبيب",
+                        "عيادة",
+                        "تحاليل"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "cat_income",
+            "name_ar": "الدخل",
+            "type": "income",
+            "icon": "attach_money",
+            "color": "#4CAF50",
+            "subcategories": [
+                {
+                    "id": "sub_salary",
+                    "name_ar": "رواتب",
+                    "keywords": [
+                        "راتب",
+                        "رواتب",
+                        "أجر",
+                        "مرتب",
+                        "مكافأة"
+                    ]
+                },
+                {
+                    "id": "sub_transfers_in",
+                    "name_ar": "حوالات مستلمة",
+                    "keywords": [
+                        "استلام حوالة",
+                        "وصلتني",
+                        "تحويللي"
+                    ]
+                },
+                {
+                    "id": "sub_investment",
+                    "name_ar": "أرباح استثمار",
+                    "keywords": [
+                        "ارباح",
+                        "فائدة",
+                        "عائد"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "cat_financial",
+            "name_ar": "التزامات مالية",
+            "type": "expense",
+            "icon": "account_balance_wallet",
+            "color": "#607D8B",
+            "subcategories": [
+                {
+                    "id": "sub_loans",
+                    "name_ar": "قروض وديون",
+                    "keywords": [
+                        "قرض",
+                        "دين",
+                        "سلفة",
+                        "استلاف",
+                        "سداد دين"
+                    ]
+                },
+                {
+                    "id": "sub_savings",
+                    "name_ar": "ادخار",
+                    "keywords": [
+                        "توفير",
+                        "ادخار",
+                        "تحويش",
+                        "حصالة"
+                    ]
+                },
+                {
+                    "id": "sub_fees",
+                    "name_ar": "رسوم وضرائب",
+                    "keywords": [
+                        "رسوم",
+                        "ضريبة",
+                        "جمركة",
+                        "عمولة تحويل"
+                    ]
+                }
+            ]
+        }
+    ],
+    "financial_entities": {
+        "banks": [
+            {
+                "id": "bank_kuraimi",
+                "name_ar": "بنك الكريمي الإسلامي",
+                "country": "YE",
+                "priority": 10,
+                "keywords": [
+                    "بنك الكريمي",
+                    "الكريمي بنك",
+                    "الكريمي الاسلامي"
+                ],
+                "sms_sender_ids": [
+                    "KurimiBank",
+                    "KIB",
+                    "Kurimi"
+                ],
+                "sms_patterns": [
+                    {
+                        "type": "deposit",
+                        "regex": "إيداع مبلغ (\\d+) في حسابك"
+                    },
+                    {
+                        "type": "withdrawal",
+                        "regex": "سحب مبلغ (\\d+) من حسابك"
+                    },
+                    {
+                        "type": "transfer",
+                        "regex": "تحويل مبلغ (\\d+) الى"
+                    }
+                ]
+            },
+            {
+                "id": "bank_alrajhi",
+                "name_ar": "مصرف الراجحي",
+                "country": "SA",
+                "priority": 10,
+                "keywords": [
+                    "الراجحي",
+                    "مصرف الراجحي",
+                    "rajhi"
+                ],
+                "sms_sender_ids": [
+                    "AlRajhiBank"
+                ],
+                "sms_patterns": [
+                    {
+                        "type": "purchase",
+                        "regex": "شراء بقيمة (\\d+\\.?\\d*) ر.س"
+                    },
+                    {
+                        "type": "transfer",
+                        "regex": "تم تحويل (\\d+\\.?\\d*) ر.س"
+                    }
+                ]
+            },
+            {
+                "id": "bank_alahli_saudi",
+                "name_ar": "البنك الأهلي السعودي (SNB)",
+                "country": "SA",
+                "priority": 9,
+                "keywords": [
+                    "الاهلي",
+                    "بنك الاهلي",
+                    "SNB",
+                    "NCB"
+                ]
+            },
+            {
+                "id": "bank_cac",
+                "name_ar": "كاك بنك",
+                "country": "YE",
+                "priority": 7,
+                "keywords": [
+                    "بنك كاك",
+                    "cac bank",
+                    "بنك التسليف",
+                    "التسليف التعاوني"
+                ]
+            },
+            {
+                "id": "bank_tadhamon",
+                "name_ar": "بنك التضامن",
+                "country": "YE",
+                "priority": 7,
+                "keywords": [
+                    "بنك التضامن",
+                    "التضامن بنك",
+                    "تضامن"
+                ]
+            }
+        ],
+        "wallets": [
+            {
+                "id": "wallet_kurimi",
+                "name_ar": "محفظة الكريمي جوال",
+                "country": "YE",
+                "priority": 10,
+                "keywords": [
+                    "كريمي",
+                    "الكريمي",
+                    "الكريمي جوال",
+                    "محفظة الكريمي",
+                    "kurimi"
+                ]
+            },
+            {
+                "id": "wallet_kurimi_mfloos",
+                "name_ar": "محفظة mFloos",
+                "country": "YE",
+                "priority": 9,
+                "keywords": [
+                    "ام فلوس",
+                    "ام فلوس الكريمي",
+                    "mflous"
+                ]
+            },
+            {
+                "id": "wallet_onecash",
+                "name_ar": "ONE Cash",
+                "country": "YE",
+                "priority": 8,
+                "keywords": [
+                    "ون كاش",
+                    "ونكاش",
+                    "one cash",
+                    "وان كاش"
+                ]
+            },
+            {
+                "id": "wallet_stcpay",
+                "name_ar": "STC Pay",
+                "country": "SA",
+                "priority": 10,
+                "keywords": [
+                    "اس تي سي باي",
+                    "stc pay",
+                    "المحفظة الرقمية",
+                    "stc wallet"
+                ]
+            },
+            {
+                "id": "wallet_apple_pay",
+                "name_ar": "Apple Pay",
+                "country": "SA",
+                "priority": 8,
+                "keywords": [
+                    "ابل باي",
+                    "ابلبي",
+                    "apple pay"
+                ]
+            },
+            {
+                "id": "wallet_mada",
+                "name_ar": "مدى",
+                "country": "SA",
+                "priority": 9,
+                "keywords": [
+                    "مدى",
+                    "بطاقة مدى",
+                    "شبكة مدى"
+                ]
+            }
+        ]
+    },
+    "vendors_directory": [
+        {
+            "id": "telco_yemenmobile",
+            "name_ar": "يمن موبايل",
+            "category_id": "sub_recharge",
+            "country": "YE",
+            "keywords": [
+                "يمن موبايل",
+                "يمنموبايل",
+                "يمن موبايل رصيد",
+                "ريال موبايل"
+            ]
+        },
+        {
+            "id": "telco_stc_sa",
+            "name_ar": "STC",
+            "category_id": "sub_recharge",
+            "country": "SA",
+            "keywords": [
+                "stc",
+                "اس تي سي",
+                "سوا"
+            ]
+        },
+        {
+            "id": "telco_mobily",
+            "name_ar": "موبايلي",
+            "category_id": "sub_recharge",
+            "country": "SA",
+            "keywords": [
+                "موبايلي",
+                "mobily"
+            ]
+        },
+        {
+            "id": "vendor_electric_ye",
+            "name_ar": "مؤسسة الكهرباء",
+            "category_id": "sub_utilities",
+            "country": "YE",
+            "keywords": [
+                "كهرباء",
+                "عداد",
+                "الكيلو",
+                "فاتورة الكهرب"
+            ]
+        },
+        {
+            "id": "vendor_internet_ye",
+            "name_ar": "مزود خدمة الانترنت",
+            "category_id": "sub_utilities",
+            "country": "YE",
+            "keywords": [
+                "انترنت",
+                "نت",
+                "واي فاي",
+                "يمن نت"
+            ]
+        },
+        {
+            "id": "vendor_supermarket_generic",
+            "name_ar": "سوبرماركت",
+            "category_id": "sub_groceries",
+            "country": "GLOBAL",
+            "keywords": [
+                "سوبرماركت",
+                "بقالة",
+                "كارفور",
+                "بنده",
+                "العثيم",
+                "الدكان"
+            ]
+        }
+    ],
+    "intents_schema": {
+        "add_transaction": {
+            "triggers": [
+                "صرف",
+                "دفعت",
+                "اشتريت",
+                "سددت",
+                "دفعة",
+                "استلمت",
+                "دخل",
+                "قبضت",
+                "حولت",
+                "ارسل",
+                "حوالة"
+            ],
+            "slots": [
+                "amount",
+                "currency",
+                "category",
+                "merchant",
+                "payment_method"
+            ]
+        },
+        "query_balance": {
+            "triggers": [
+                "كم رصيدي",
+                "الرصيد",
+                "قيمة الحساب",
+                "حسب لي الرصيد",
+                "كم باقي",
+                "كم معي"
+            ],
+            "slots": [
+                "account_name"
+            ]
+        },
+        "pay_bill": {
+            "triggers": [
+                "سددت فاتورة",
+                "ادفع فاتورة",
+                "دفع فاتورة",
+                "عليا فاتورة"
+            ],
+            "slots": [
+                "biller_name",
+                "amount"
+            ]
+        }
+    }
+}
